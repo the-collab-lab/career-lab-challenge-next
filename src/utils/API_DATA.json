@@ -1,0 +1,154 @@
+{
+	"preference": null,
+	"pagination": {
+		"total": 4451,
+		"limit": 10,
+		"offset": 0,
+		"total_pages": 446,
+		"current_page": 1
+	},
+	"data": [
+		{
+			"_score": 99.79061,
+			"thumbnail": {
+				"alt_text": "A work made of lithograph in 6 colors (red, ochre, yellow, black, gray-brown, brown) from two stones, with scraping on stone, on ivory wove paper.",
+				"width": 2928,
+				"height": 2250
+			},
+			"date_display": "1909",
+			"artist_title": "Th\u00e9ophile-Alexandre Pierre Steinlen",
+			"id": 51719,
+			"image_id": "e8e67721-bbb1-d007-82bd-c430ea73db70",
+			"title": "Winter: Cat on a Cushion"
+		},
+		{
+			"_score": 98.7247,
+			"thumbnail": {
+				"alt_text": "A work made of wood.",
+				"width": 1500,
+				"height": 2250
+			},
+			"date_display": "Late Period-Ptolemaic Period (about 664\u201332 BCE)",
+			"artist_title": "Ancient Egyptian",
+			"id": 5522,
+			"image_id": "07b26469-589f-e3e0-dd58-be1d4daad30d",
+			"title": "Sarcophagus (?) of a Cat"
+		},
+		{
+			"_score": 98.276306,
+			"thumbnail": {
+				"alt_text": "A work made of gold, enamel, and baroque pearl.",
+				"width": 2911,
+				"height": 2250
+			},
+			"date_display": "17th century",
+			"artist_title": null,
+			"id": 119335,
+			"image_id": "fe394433-14ae-89e0-136f-31cbdb390771",
+			"title": "Baroque Pearl Mounted as a Cat Holding a Mouse"
+		},
+		{
+			"_score": 97.984436,
+			"thumbnail": {
+				"alt_text": "A work made of hand-colored woodblock print; tan-e, vertical o-oban.",
+				"width": 2039,
+				"height": 3800
+			},
+			"date_display": "c. 1715",
+			"artist_title": "Kaigetsudo Dohan",
+			"id": 158921,
+			"image_id": "e1c9e502-1632-828f-f893-b166b6cc17d9",
+			"title": "Courtesan Playing with a Cat"
+		},
+		{
+			"_score": 96.74713,
+			"thumbnail": {
+				"alt_text": "A work made of lithograph in black on ivory wove paper, laid down on ivory cloth.",
+				"width": 1767,
+				"height": 2250
+			},
+			"date_display": "1868",
+			"artist_title": "\u00c9douard Manet",
+			"id": 68825,
+			"image_id": "752c8b28-5873-2ddb-f7cd-6ea9e4766195",
+			"title": "The Cats' Rendezvous"
+		},
+		{
+			"_score": 94.92327,
+			"thumbnail": {
+				"alt_text": "A work made of lithograph (brush, crayon and spatter with scraper) in pink/mauve, violet black and brown on cream wove paper.",
+				"width": 3000,
+				"height": 2416
+			},
+			"date_display": "1909",
+			"artist_title": "Th\u00e9ophile-Alexandre Pierre Steinlen",
+			"id": 51724,
+			"image_id": "c7a1688c-8a21-8eab-086d-3537b1506705",
+			"title": "Summer: Cat on a Balustrade"
+		},
+		{
+			"_score": 94.367134,
+			"thumbnail": {
+				"alt_text": "A work made of engraving on ivory paper.",
+				"width": 3000,
+				"height": 2305
+			},
+			"date_display": "1657",
+			"artist_title": "Cornelis Visscher",
+			"id": 9372,
+			"image_id": "86706756-2cf8-6a7c-58cc-90efaa4db124",
+			"title": "The Large Cat"
+		},
+		{
+			"_score": 89.097374,
+			"thumbnail": {
+				"alt_text": "A work made of bronze.",
+				"width": 2733,
+				"height": 2250
+			},
+			"date_display": "c. 1880",
+			"artist_title": "Rosa Bonheur",
+			"id": 70989,
+			"image_id": "4e2df5e5-10ff-9b80-db1c-419895f1054f",
+			"title": "Lion"
+		},
+		{
+			"_score": 85.58735,
+			"thumbnail": {
+				"alt_text": "A work made of color woodblock print; chuban.",
+				"width": 2231,
+				"height": 3000
+			},
+			"date_display": "c. early 1770s",
+			"artist_title": "Isoda Koryusai",
+			"id": 21177,
+			"image_id": "91dea26d-71c5-c5b2-19e3-feb5bcecb5bc",
+			"title": "Cat Pawing at Goldfish"
+		},
+		{
+			"_score": 85.200424,
+			"thumbnail": {
+				"alt_text": "A work made of cotton, plain weave; embroidered with wool (camelid) in stem stitches.",
+				"width": 5128,
+				"height": 6777
+			},
+			"date_display": "100 B.C./A.D. 200",
+			"artist_title": "Nazca",
+			"id": 2990,
+			"image_id": "eed0aee3-a6c9-f740-00c9-64c8b9ca910a",
+			"title": "Border Fragments"
+		}
+	],
+	"info": {
+		"license_text": "The data in this response is licensed under a Creative Commons Zero (CC0) 1.0 designation and the Terms and Conditions of artic.edu.",
+		"license_links": [
+			"https://creativecommons.org/publicdomain/zero/1.0/",
+			"https://www.artic.edu/terms"
+		],
+		"version": "1.3"
+	},
+	"config": {
+		"iiif_url": "https://www.artic.edu/iiif/2",
+		"website_url": "http://www.artic.edu"
+	}
+}
