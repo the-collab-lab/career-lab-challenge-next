@@ -1,16 +1,19 @@
 import './App.css';
 
+import { searchArtworks } from '../utils/api';
 import { SearchForm } from './SearchForm';
 
 export function App() {
-	function onFormSubmit(query) {
-		console.log('The user searched for: ' + query);
+	function onSearchSubmit(query) {
+		searchArtworks(query).then((json) => {
+			console.log(json);
+		});
 	}
 
 	return (
 		<div className="App">
 			<h1>TCL Career Lab Art Finder</h1>
-			<SearchForm onFormSubmit={onFormSubmit} />
+			<SearchForm onSearchSubmit={onSearchSubmit} />
 		</div>
 	);
 }
