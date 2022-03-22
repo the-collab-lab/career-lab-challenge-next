@@ -9,7 +9,7 @@ const stringifiedData = JSON.stringify(API_DATA, null, 2);
  * @property {string} image_id
  * @property {{alt_text: string, height: string, width: string}} thumbnail
  * @property {string} title
- * @property {string} _score
+ * @property {number} _score
  *
  *
  * @typedef {Object} ArtworkSearchResult
