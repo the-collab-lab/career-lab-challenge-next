@@ -1,0 +1,12 @@
+{
+	"extends": ["react-app", "react-app/jest", "prettier"],
+	"rules": {
+		"react/jsx-sort-props": [
+			1,
+			{
+				"callbacksLast": true,
+				"reservedFirst": true
+			}
+		]
+	}
+}
