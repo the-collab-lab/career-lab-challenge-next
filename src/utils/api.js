@@ -7,7 +7,7 @@ const stringifiedData = JSON.stringify(API_DATA, null, 2);
  * @property {string} artist_title
  * @property {string} date_display
  * @property {string} image_id
- * @property {{alt_text: string, height: string, width: string}} thumbnail
+ * @property {{alt_text: string, height: number, width: number}} thumbnail
  * @property {string} title
  * @property {number} _score
  *
