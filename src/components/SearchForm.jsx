@@ -21,9 +21,10 @@ export function SearchForm({ onSearchSubmit }) {
 				Search for some art
 			</label>
 			<input
-				type="search"
+				type="text"
 				id="search-field"
 				name="query"
+				inputMode="search"
 				className="input"
 				value={query}
 				onChange={handleInputChange}
