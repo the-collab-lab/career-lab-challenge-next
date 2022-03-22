@@ -1,0 +1,9 @@
+.App {
+  margin: 0 auto;
+  max-width: 95%;
+  width: 100rem;
+}
+
+.App > h1 {
+  text-align: center;
+}

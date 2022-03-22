@@ -1,0 +1,14 @@
+.Form {
+  display: flex;
+  font-size: 1.2em;
+  flex-direction: column;
+}
+
+.Form .button,
+.Form .input {
+  padding: 0.5em;
+}
+
+.Form .button {
+  margin-top: 0.25em;
+}
