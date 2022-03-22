@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { SearchForm } from '../components/SearchForm';
 
-test('Renders `SearchForm` with the role `search`', () => {
+test('Renders an input with the expected label', () => {
 	render(<SearchForm />);
-	const searchForm = screen.getByRole('search');
+	const searchForm = screen.getByLabelText('Search for some art');
 	expect(searchForm).toBeInTheDocument();
 });
