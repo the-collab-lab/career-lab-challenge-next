@@ -1,14 +1,19 @@
 .Form {
-  display: flex;
-  font-size: 1.2em;
-  flex-direction: column;
+	display: flex;
+	font-size: 1.2em;
+	flex-direction: column;
 }
 
 .Form .button,
 .Form .input {
-  padding: 0.5em;
+	padding: 0.5em;
 }
 
 .Form .button {
-  margin-top: 0.25em;
+	margin-top: 0.25em;
+}
+
+.Form .input {
+	border: 1px solid black;
+	border-radius: 0;
 }
