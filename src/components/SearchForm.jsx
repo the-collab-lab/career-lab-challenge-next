@@ -16,20 +16,20 @@ export function SearchForm({ onSearchSubmit }) {
 	}
 
 	return (
-		<form className="Form" onSubmit={handleFormSubmit} role="search">
-			<label htmlFor="search-field" className="label">
+		<form className="Form" role="search" onSubmit={handleFormSubmit}>
+			<label className="label" htmlFor="search-field">
 				Search for some art
 			</label>
 			<input
-				type="text"
-				id="search-field"
-				name="query"
-				inputMode="search"
 				className="input"
+				id="search-field"
+				inputMode="search"
+				name="query"
+				type="text"
 				value={query}
 				onChange={handleInputChange}
 			/>
-			<button type="submit" className="button">
+			<button className="button" type="submit">
 				Search
 			</button>
 		</form>
