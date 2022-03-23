@@ -1,5 +1,5 @@
-import API_DATA from './API_DATA.json';
-const stringifiedData = JSON.stringify(API_DATA, null, 2);
+import ARTWORKS_SEARCH_DATA from '../data/ARTWORKS_SEARCH.json';
+const stringifiedData = JSON.stringify(ARTWORKS_SEARCH_DATA, null, 2);
 
 /**
  * An individual piece of artwork found at the `/artworks/search/` endpoint.
@@ -35,7 +35,7 @@ export function searchArtworks(query) {
 }
 
 /**
- * Get local data from `API_DATA.json`.
+ * Get local data from `ARTWORKS_SEARCH.json`.
  *
  * This behaves as if we've made a fetch request. You can use `response.ok`,
  * `response.status`, `response.json()`, etc.
