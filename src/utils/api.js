@@ -31,7 +31,7 @@ export function searchArtworks(query) {
 	 * Get data from `ARTWORKS_SEARCH.json`, whuch is served by our
 	 * local server.
 	 * TODO: replace with path to `/artworks/search/` endpoint,
-	// as described in README.md.
+	 * as described in README.md.
 	 */
 	const requestUrl = `${process.env.PUBLIC_URL}/ARTWORKS_SEARCH.json`;
 
