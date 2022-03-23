@@ -1,5 +1,3 @@
-import ARTWORKS_SEARCH_DATA from '../data/ARTWORKS_SEARCH.json';
-
 /**
  * Throughout this file are blocks of comments containing keywords
  * prefixed with `@`. These are JSDoc comments, and they help us
@@ -29,47 +27,17 @@ import ARTWORKS_SEARCH_DATA from '../data/ARTWORKS_SEARCH.json';
  * @returns {Promise<ArtworkSearchResult>}
  */
 export function searchArtworks(query) {
-	// TODO: replace `getLocalData` with fetch request to `/artworks/search/`,
+	/**
+	 * Get data from `ARTWORKS_SEARCH.json`, whuch is served by our
+	 * local server.
+	 * TODO: replace with path to `/artworks/search/` endpoint,
 	// as described in README.md.
-	// This function currently returns data as if the user
-	// has searched for `cats`.
-	return getLocalData().then((res) => {
+	 */
+	const requestUrl = `${process.env.PUBLIC_URL}/ARTWORKS_SEARCH.json`;
+
+	return fetch(requestUrl).then((res) => {
 		if (res.ok) {
 			return res.json();
 		}
-	});
-}
-
-/**
- * Get the data in `ARTWORKS_SEARCH.json`.
- *
- * This function simulates a request with the Fetch API – you can use
- * `response.ok`, `response.status`, `response.json()`, etc.
- *
- * Use this function while building out your UI, to avoid hammering
- * the public API with too many requests.
- * @returns {Promise<Response>}
- */
-function getLocalData() {
-	/**
-	 * A Blob is a file-like object of raw data. We need this special object
-	 * in order to simulate a Fetch API response.
-	 * @see: https://developer.mozilla.org/en-US/docs/Web/API/Blob
-	 */
-	const blob = new Blob([JSON.stringify(ARTWORKS_SEARCH_DATA, null, 2)], {
-		type: 'application/json',
-	});
-
-	/**
-	 * The fetch API returns a special Response object. We make one here
-	 * to simulate using the Fetch API.
-	 * @see: https://developer.mozilla.org/en-US/docs/Web/API/Response
-	 */
-	const response = new Response(blob);
-
-	return new Promise((resolve) => {
-		setTimeout(() => {
-			resolve(response);
-		}, 250);
 	});
 }
