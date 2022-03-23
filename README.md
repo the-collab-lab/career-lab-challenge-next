@@ -28,7 +28,9 @@ npm test
 
 Your team has agreed on the following requirements for the app's MVP (minimum viable product). Your teammate has implemented a couple of these criteria already. Start with `./src/components/App.jsx` to familiarize yourself with their work, then build on top of it. You're gonna do great!
 
-- [x] Create a `getLocalData` function that allows the team to work with local data while developing the app. See `src/utils/api.js`
+- [x] Create a `searchArtworks` for making GET requests to `/search/artworks/`. See `src/utils/api.js`
+  - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the COIA `/artworks/search/` endpoint
+  - [ ] **When the UI is minimally complete**, ensure that `searchArtworks` makes requests to the CIOA `/artworks/search/` endpoint, as described in "Working with the API"
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
 - [ ] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
 - [ ] Create two views (e.g., `SearchPage` and `ImageDetailsPage`)
@@ -38,8 +40,6 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
 - [ ] In `ImageDetailsPage`, render
   - a back button that allows the user to return to their search, and
   - the artwork whose title they just clicked on
-- [ ] Replace any use of `getLocalData` with a real request to the CIOA
-      `/artworks/search/` endpoint, as described in "Working with the API"
 
 ## 💻 Working with the API
 
