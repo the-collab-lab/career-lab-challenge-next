@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# 🗒️ Let’s look at some art
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Your team has been developing an app that allows users to search the Chicago Institute of Art (CIOA)'s API for public domain artwork. You've inherited some code from a teammate – your job is to finish the rest of the tasks your team has agreed on!
 
-## Available Scripts
+To fulfill the remaining acceptance criteria for this project, you will need to make requests to _two_ endpoints provided by the COIA. **We have provided some guidance about using the CIOA API.** See the “Working with the API” section.
 
-In the project directory, you can run:
+## Local development setup
 
-### `npm start`
+In order to work on the project, you'll need to install its dependencies. `cd` into this folder and run the following command in your terminal:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm ci
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Now, to develop the app locally, run:
 
-### `npm test`
+```bash
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run your tests, run:
 
-### `npm run build`
+```bash
+npm test
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Acceptance criteria
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Your team has agreed on the following requirements for the app's MVP (minimum viable product). Your teammate has implemented a couple of these criteria already. Start with `./src/components/App.jsx` to familiarize yourself with their work, then build on top of it. You're gonna do great!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] Create a `getLocalData` function that allows the team to work with local data while developing the app. See `src/utils/api.js`
+- [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
+- [] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
+- [] Create two views (e.g., `SearchPage` and `ImageDetailsPage`)
+- In `SearchPage`, render
+  - the `SearchForm` component and
+  - a list of results including _the name of the piece_ and _the artist who created the piece_. When a result is clicked, the user should see `ImageDetailsPage`.
+- [] In `ImageDetailsPage`, render
+  - a back button that allows the user to return to their search, and
+  - the artwork whose title they just clicked on
+- [] Replace any use of `getLocalData` with a real request to the CIOA
+  `/artworks/search/` endpoint, as described in "Working with the API"
 
-### `npm run eject`
+## 💻 Working with the API
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+CIOA maintains two distinct APIs: one for requesting data from its catalog, and one for requesting the images from the catalog. These APIs have some dense documentation; we’ve outlined the things you should know.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**⚠️ Read this section carefully.** You will need data from the catalog in order to request the images you want to show to the user!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Requesting data from the catalog
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You’ll make requests to the `/artworks/search/` endpoint provided by the COIA. You can build a search with a URL like the following:
 
-## Learn More
+> `https://api.artic.edu/api/v1/artworks/search?q=${USER_QUERY}&query[term][is_public_domain]=true&fields=artist_title,id,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+These URLs are quite long, but you don't need to worry about exactly what each part means. You'll need to replace `{USER_QUERY}` with the thing your user searched for in the catalog. If your user searches for “cats”, your request url becomes:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> `https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,id,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`.
 
-### Code Splitting
+Try it our for yourself: [open the “cats” query in your browser](https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,id,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Working with data returned from the catalog
 
-### Analyzing the Bundle Size
+Requests to the `/artworks/seearch/` endpoint return **a JSON object**. This object has _a lot_ of information. You should focus on the `data` property, which is an array of objects. Each object is shaped as follows:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[NB: this would be easier to parse as a table; I just don’t want to bother with the table markup right now]
 
-### Making a Progressive Web App
+- `artist_title`: a string indicating the known artist of the piece
+- `date_display`: a string indicating the known production date of the piece
+- `id`: a number representing the item’s unique id
+- `image_id`: a string referencing the id of the full image for this catalog item
+- `thumbnail`: an object with the following properties: `alt_text`, `width`, and `height`
+- `title`: a string indicating the title of the piece
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 🖼️ Requesting an image
 
-### Advanced Configuration
+The COIA provides an endpoint dedicated to serving images. You can make requests from it as follows:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+https://www.artic.edu/iiif/2/{IMAGE_ID}/full/843,/0/default.jpg
+```
 
-### Deployment
+You should replace `{IMAGE_ID}` with an image ID from the data you retrieve from the `/artworks/search/` endpoint. For instance, you can view Georges Seurat’s _La grande jette_ at the following URL:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg
+```
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can also [open that image in your browser](https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg), if you’d like!
