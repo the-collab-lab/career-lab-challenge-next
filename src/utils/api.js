@@ -1,5 +1,4 @@
 import ARTWORKS_SEARCH_DATA from '../data/ARTWORKS_SEARCH.json';
-const stringifiedData = JSON.stringify(ARTWORKS_SEARCH_DATA, null, 2);
 
 /**
  * An individual piece of artwork found at the `/artworks/search/` endpoint.
@@ -23,7 +22,7 @@ const stringifiedData = JSON.stringify(ARTWORKS_SEARCH_DATA, null, 2);
  * @returns {Promise<ArtworkSearchResult>}
  */
 export function searchArtworks(query) {
-	// TODO: replace `getLocalData` with fetch API call to `/artworks/search/`,
+	// TODO: replace `getLocalData` with fetch request to `/artworks/search/`,
 	// as described in README.md.
 	// This function currently returns data as if the user
 	// has searched for `cats`.
@@ -35,25 +34,35 @@ export function searchArtworks(query) {
 }
 
 /**
- * Get local data from `ARTWORKS_SEARCH.json`.
+ * Get the data in `ARTWORKS_SEARCH.json`.
  *
- * This behaves as if we've made a fetch request. You can use `response.ok`,
- * `response.status`, `response.json()`, etc.
+ * This function simulates a request with the Fetch API – you can use
+ * `response.ok`, `response.status`, `response.json()`, etc.
  *
  * Use this function while building out your UI, to avoid hammering
  * the public API with too many requests.
  * @returns {Promise<Response>}
  */
 function getLocalData() {
+	/**
+	 * A Blob is a file-like object of raw data. We need this special object
+	 * in order to simulate a Fetch API response.
+	 * @see: https://developer.mozilla.org/en-US/docs/Web/API/Blob
+	 */
+	const blob = new Blob([JSON.stringify(ARTWORKS_SEARCH_DATA, null, 2)], {
+		type: 'application/json',
+	});
+
+	/**
+	 * The fetch API returns a special Response object. We make one here
+	 * to simulate using the Fetch API.
+	 * @see: https://developer.mozilla.org/en-US/docs/Web/API/Response
+	 */
+	const response = new Response(blob);
+
 	return new Promise((resolve) => {
 		setTimeout(() => {
-			resolve(
-				new Response(
-					new Blob([stringifiedData], {
-						type: 'application/json',
-					})
-				)
-			);
+			resolve(response);
 		}, 250);
 	});
 }
