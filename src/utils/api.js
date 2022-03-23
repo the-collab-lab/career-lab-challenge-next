@@ -24,7 +24,9 @@ const stringifiedData = JSON.stringify(API_DATA, null, 2);
  */
 export function searchArtworks(query) {
 	// TODO: replace `getLocalData` with fetch API call to `/artworks/search/`,
-	// as described in docs
+	// as described in README.md.
+	// This function currently returns data as if the user
+	// has searched for `cats`.
 	return getLocalData().then((res) => {
 		if (res.ok) {
 			return res.json();
@@ -33,9 +35,10 @@ export function searchArtworks(query) {
 }
 
 /**
- * Get the local data from `API_DATA.json` as if we made
- * a typical fetch request. You can use `response.ok`, `response.status`,
- * `response.json()`, etc.
+ * Get local data from `API_DATA.json`.
+ *
+ * This behaves as if we've made a fetch request. You can use `response.ok`,
+ * `response.status`, `response.json()`, etc.
  *
  * Use this function while building out your UI, to avoid hammering
  * the public API with too many requests.
