@@ -30,16 +30,16 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
 
 - [x] Create a `getLocalData` function that allows the team to work with local data while developing the app. See `src/utils/api.js`
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
-- [] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
-- [] Create two views (e.g., `SearchPage` and `ImageDetailsPage`)
+- [ ] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
+- [ ] Create two views (e.g., `SearchPage` and `ImageDetailsPage`)
 - In `SearchPage`, render
   - the `SearchForm` component and
   - a list of results including _the name of the piece_ and _the artist who created the piece_. When a result is clicked, the user should see `ImageDetailsPage`.
-- [] In `ImageDetailsPage`, render
+- [ ] In `ImageDetailsPage`, render
   - a back button that allows the user to return to their search, and
   - the artwork whose title they just clicked on
-- [] Replace any use of `getLocalData` with a real request to the CIOA
-  `/artworks/search/` endpoint, as described in "Working with the API"
+- [ ] Replace any use of `getLocalData` with a real request to the CIOA
+      `/artworks/search/` endpoint, as described in "Working with the API"
 
 ## 💻 Working with the API
 
