@@ -51,7 +51,7 @@ CIOA maintains two distinct APIs: one for requesting data from its catalog, and 
 
 You’ll make requests to the `/artworks/search/` endpoint provided by the COIA. You can build a search with a URL like the following:
 
-> `https://api.artic.edu/api/v1/artworks/search?q=${USER_QUERY}&query[term][is_public_domain]=true&fields=artist_title,id,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
+> `https://api.artic.edu/api/v1/artworks/search?q={USER_QUERY}&query[term][is_public_domain]=true&fields=artist_title,id,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
 
 These URLs are quite long, but you don't need to worry about exactly what each part means. You'll need to replace `{USER_QUERY}` with the thing your user searched for in the catalog. If your user searches for “cats”, your request url becomes:
 
