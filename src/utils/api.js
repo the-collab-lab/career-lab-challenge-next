@@ -1,6 +1,13 @@
 import ARTWORKS_SEARCH_DATA from '../data/ARTWORKS_SEARCH.json';
 
 /**
+ * Throughout this file are blocks of comments containing keywords
+ * prefixed with `@`. These are JSDoc comments, and they help us
+ * describe variables, functions, and other aspects of our code.
+ * @see: https://jsdoc.app/
+ */
+
+/**
  * An individual piece of artwork found at the `/artworks/search/` endpoint.
  * @typedef {Object} Artwork
  * @property {string} artist_title
