@@ -66,11 +66,11 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
   - [ ] **When the UI is minimally complete**, ensure that `searchArtworks` makes requests to the CIOA `/artworks/search/` endpoint, as described in "Working with the API"
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
 - [ ] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
-- [ ] Create two views (e.g., `SearchPage` and `ImageDetailsPage`)
-- In `SearchPage`, render
+- [ ] In the `App` component render
   - the `SearchForm` component and
-  - a list of results including _the name of the piece_ and _the artist who created the piece_. When a result is clicked, the user should see `ImageDetailsPage`.
-- [ ] In `ImageDetailsPage`, render
+  - a list of results including _the name of the piece_ and _the artist who created the piece_.
+- [ ] Render a new view when a user chooses a result. It could be called `ImageDetailsPage`.
+- [ ] In the `ImageDetailsPage` component, render
   - a back button that allows the user to return to their search, and
   - the artwork whose title they just clicked on
 
