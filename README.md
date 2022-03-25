@@ -1,18 +1,16 @@
 # 🗒️ Let’s look at some art
 
-Your team has been developing an app that allows users to search the Chicago Institute of Art (CIOA)'s API for public domain artwork. You've inherited some code from a teammate – your job is to finish the rest of the tasks your team has agreed on!
-
-To fulfill the remaining acceptance criteria for this project, you will need to make requests to _two_ endpoints provided by the COIA. **We have provided some guidance about using the CIOA API.** See the “Working with the API” section.
+Your team has been developing an app that allows users to search the Chicago Institute of Art (CIOA)'s APIs for public domain artwork. You've inherited some code from a teammate – a Reacr application with some components and some functions for interating with one of the APIs. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with the COIA's APIs.
 
 ## Local development setup
 
 To get started, you'll need to initialize a new repo using this repo as a template. You can do that **with the Github GUI** or with the **GitHub CLI**. After that, proceed to the **Acceptance criteria** section.
 
-### Initialize your repo with the GitHub GUI
+### Initialize your repo from this template with the GitHub GUI
 
 [TODO: add screenshots]
 
-1. Click the "Use this template" button on the GitHub page for this repo. It's locate above this readme, and above the preview of the project's file structure.
+1. Click the "Use this template" button on the GitHub page for this repo. It's located above this readme, and above the preview of the project's file structure.
 2. On the next page, give your new repo a name. Make sure the repository is public!
 3. Click "Create repository from template". Your repository will generate and you will be navigated to its GitHub page.
 4. Click the "Code" button to reveal the command you can run to clone your repo to your computer, then click the "copy" button (it looks like a clipboard).
@@ -21,19 +19,9 @@ To get started, you'll need to initialize a new repo using this repo as a templa
 6. `cd` into your new directory
 7. Run `npm ci` to install the project's dependencies
 
-Now, to develop the app locally, run:
+Now, to develop the app locally, run `npm start`. To run your tests, run `npm test`.
 
-```bash
-npm start
-```
-
-To run your tests, run:
-
-```bash
-npm test
-```
-
-### Initialize your repo with the GitHub CLI
+### Initialize your repo from this template with the GitHub CLI
 
 In your terminal, `cd` into the folder you want your project to live in and run the following commands:
 
@@ -45,23 +33,13 @@ gh repo create take-home-assignment --template mxmason/career-lab-assignment-nex
 cd take-home-assignment && npm ci
 ```
 
-Now, to develop the app locally, run:
-
-```bash
-npm start
-```
-
-To run your tests, run:
-
-```bash
-npm test
-```
+Now, to develop the app locally, run `npm start`. To run your tests, run `npm test`.
 
 ## Acceptance criteria
 
 Your team has agreed on the following requirements for the app's MVP (minimum viable product). Your teammate has implemented a couple of these criteria already. Start with `./src/components/App.jsx` to familiarize yourself with their work, then build on top of it. You're gonna do great!
 
-- [x] Create a `searchArtworks` for making GET requests to `/search/artworks/`. See `src/utils/api.js`
+- [x] Create a `searchArtworks` function for making GET requests to `/search/artworks/`. See `src/utils/api.js`
   - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the COIA `/artworks/search/` endpoint
   - [ ] **When the UI is minimally complete**, ensure that `searchArtworks` makes requests to the CIOA `/artworks/search/` endpoint, as described in "Working with the API"
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
