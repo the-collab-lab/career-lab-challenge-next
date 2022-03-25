@@ -6,10 +6,43 @@ To fulfill the remaining acceptance criteria for this project, you will need to 
 
 ## Local development setup
 
-In order to work on the project, you'll need to install its dependencies. `cd` into this folder and run the following command in your terminal:
+To get started, you'll need to initialize a new repo using this repo as a template. You can do that **with the Github GUI** or with the **GitHub CLI**. After that, proceed to the **Acceptance criteria** section.
+
+### Initialize your repo with the GitHub GUI
+
+[TODO: add screenshots]
+
+1. Click the "Use this template" button on the GitHub page for this repo. It's locate above this readme, and above the preview of the project's file structure.
+2. On the next page, give your new repo a name. Make sure the repository is public!
+3. Click "Create repository from template". Your repository will generate and you will be navigated to its GitHub page.
+4. Click the "Code" button to reveal the command you can run to clone your repo to your computer, then click the "copy" button (it looks like a clipboard).
+   <img src="https://camo.githubusercontent.com/36eafd97d2b6b3cf1c6b33f008063f50b87ae5eed76d9ff3ed650595534da4eb/68747470733a2f2f63646e2e7a617070792e6170702f66646462353531666534393462666331386431386533303039633435356233302e706e67" width="600" alt="">
+5. Run that code in your terminal
+6. `cd` into your new directory
+7. Run `npm ci` to install the project's dependencies
+
+Now, to develop the app locally, run:
 
 ```bash
-npm ci
+npm start
+```
+
+To run your tests, run:
+
+```bash
+npm test
+```
+
+### Initialize your repo with the GitHub CLI
+
+In your terminal, `cd` into the folder you want your project to live in and run the following commands:
+
+```
+# Generate a new repo from this template with the name `take-home-assignment`
+# and clone it to your computer in a new folder named `take-home-assignment`
+gh repo create take-home-assignment --template mxmason/career-lab-assignment-next --public --clone
+# Move into this new folder and install the project's dependencies
+cd take-home-assignment && npm ci
 ```
 
 Now, to develop the app locally, run:
