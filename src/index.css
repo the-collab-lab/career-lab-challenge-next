@@ -2,13 +2,13 @@
 	box-sizing: border-box;
 }
 
-
 html {
 	font-size: 62.5%;
 }
 
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+		Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 	font-size: 1.6rem;
 	line-height: 1.15;
 	margin: 0;
@@ -16,7 +16,8 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-button, input {
+button,
+input {
 	font-family: inherit;
 	font-size: 100%;
 	line-height: inherit;
@@ -24,5 +25,6 @@ button, input {
 
 pre,
 code {
-	font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,  monospace;
+	font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+		monospace;
 }
