@@ -49,8 +49,10 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
   - a list of results including _the name of the piece_ and _the artist who created the piece_.
 - [ ] Render a new view when a user chooses a result. It could be called `ImageDetailsPage`.
 - [ ] In the `ImageDetailsPage` component, render
-  - a back button that allows the user to return to their search, and
+  - a back button💡 that allows the user to return to their search, and
   - the artwork whose title they just clicked on
+
+💡 Render **your own back button** that allows the user to return to their search results. Don't worry about supporting the browser's backward and forward navigation buttons in your MVP.
 
 ## 💻 Working with the API
 
