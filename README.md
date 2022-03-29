@@ -1,6 +1,6 @@
 # 🗒️ Let’s look at some art
 
-Your team has been developing an app that allows users to search the Chicago Institute of Art (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with one of the APIs. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with the COIA's APIs.
+Your team has been developing an app that allows users to search the Art Institute of Chicago (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with one of the APIs. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with the COIA's APIs.
 
 ## Local development setup
 
