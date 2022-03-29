@@ -1,6 +1,6 @@
 import './Footer.css';
 
-export const Footer = (
+export const Footer = () => (
 	<footer class="Footer">
 		<p>
 			Artwork and all related information courtesy of{' '}
