@@ -1,6 +1,6 @@
 # 🗒️ Let’s look at some art
 
-Your team has been developing an app that allows users to search the Chicago Institute of Art (CIOA)'s APIs for public domain artwork. You've inherited some code from a teammate – a Reacr application with some components and some functions for interating with one of the APIs. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with the COIA's APIs.
+Your team has been developing an app that allows users to search the Chicago Institute of Art (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with one of the APIs. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with the COIA's APIs.
 
 ## Local development setup
 
@@ -41,7 +41,7 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
 
 - [x] Create a `searchArtworks` function for making GET requests to `/search/artworks/`. See `src/utils/api.js`
   - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the COIA `/artworks/search/` endpoint
-  - [ ] **When the UI is minimally complete**, ensure that `searchArtworks` makes requests to the CIOA `/artworks/search/` endpoint, as described in "Working with the API"
+  - [ ] **When the UI is minimally complete**, ensure that `searchArtworks` makes requests to the AIC `/artworks/search/` endpoint, as described in "Working with the API"
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
 - [ ] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
 - [ ] In the `App` component render
@@ -56,7 +56,7 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
 
 ## 💻 Working with the API
 
-CIOA maintains two distinct APIs: one for requesting data from its catalog, and one for requesting the images from the catalog. These APIs have some dense documentation; we’ve outlined the things you should know.
+AIC maintains two distinct APIs: one for requesting data from its catalog, and one for requesting the images from the catalog. These APIs have some dense documentation; we’ve outlined the things you should know.
 
 **⚠️ Read this section carefully.** You will need data from the catalog in order to request the images you want to show to the user!
 
@@ -64,19 +64,17 @@ CIOA maintains two distinct APIs: one for requesting data from its catalog, and 
 
 You’ll make requests to the `/artworks/search/` endpoint provided by the COIA. You can build a search with a URL like the following:
 
-> `https://api.artic.edu/api/v1/artworks/search?q={USER_QUERY}&query[term][is_public_domain]=true&fields=artist_title,id,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
+> `https://api.artic.edu/api/v1/artworks/search?q={USER_QUERY}&query[term][is_public_domain]=true&fields=artist_title,date_display,id,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
 
 These URLs are quite long, but you don't need to worry about exactly what each part means. You'll need to replace `{USER_QUERY}` with the thing your user searched for in the catalog. If your user searches for “cats”, your request url becomes:
 
-> `https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,id,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`.
+> `https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,id,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`.
 
-Try it our for yourself: [open the “cats” query in your browser](https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,id,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title).
+Try it our for yourself: [open the “cats” query in your browser](https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,id,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title).
 
 #### Working with data returned from the catalog
 
 Requests to the `/artworks/seearch/` endpoint return **a JSON object**. This object has _a lot_ of information. You should focus on the `data` property, which is an array of objects. Each object is shaped as follows:
-
-[NB: this would be easier to parse as a table; I just don’t want to bother with the table markup right now]
 
 - `artist_title`: a string indicating the known artist of the piece
 - `date_display`: a string indicating the known production date of the piece
