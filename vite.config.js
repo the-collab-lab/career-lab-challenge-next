@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite';
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import react from '@vitejs/plugin-react';
-import { VitePWA as PWA } from 'vite-plugin-pwa';
+import { VitePWA } from 'vite-plugin-pwa';
 
-const PWAPlugin = PWA({
+const PWAConfig = {
 	includeAssets: ['favicon.ico', 'robots.txt'],
 	manifest: {
 		short_name: 'Art Finder',
@@ -31,11 +31,11 @@ const PWAPlugin = PWA({
 		theme_color: '#000000',
 		background_color: '#ffffff',
 	},
-});
+};
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [PWAPlugin, react()],
+	plugins: [VitePWA(PWAConfig), react(), splitVendorChunkPlugin()],
 	server: { open: true },
 	test: {
 		globals: true,
