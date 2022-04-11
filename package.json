@@ -16,11 +16,13 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.2",
-    "vite": "^2.9.1"
+    "vite": "^2.9.1",
+    "vitest": "^0.9.2"
   },
   "scripts": {
     "start": "vite",
     "build": "vite build",
+    "test": "vitest",
     "preview": "vite preview",
     "prepare": "husky install"
   },
