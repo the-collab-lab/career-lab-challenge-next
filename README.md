@@ -4,7 +4,7 @@ Your team has been developing an app that allows users to search the Art Institu
 
 ## Local development setup
 
-To get started, you'll need to initialize a new repo using this repo as a template. You can do that **with the Github GUI** or with the **GitHub CLI**. After that, proceed to the **Acceptance criteria** section.
+To get started, you'll need to initialize a new repo using this repo as a template. You can do that [with the Github GUI](#initialize-your-repo-from-this-template-with-the-github-gui) or [with the GitHub CLI](#initialize-your-repo-from-this-template-with-the-github-cli). After that, proceed to the [acceptance criteria](#acceptance-criteria) section.
 
 ### Initialize your repo from this template with the GitHub GUI
 
