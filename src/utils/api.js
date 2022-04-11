@@ -33,9 +33,15 @@ export function searchArtworks(query) {
 	 * TODO: replace with path to `/artworks/search/` endpoint,
 	 * as described in README.md.
 	 */
-	const requestUrl = `./public/ARTWORKS_SEARCH_RESULT.json`;
+	const requestUrl = `./ARTWORKS_SEARCH_RESULT.json`;
 
-	return fetch(requestUrl).then((res) => {
+	/**
+	 * We know the API serves JSON data, but
+	 * it's a good idea to explicitly request JSON anyway.
+	 * */
+	const headers = { Accept: 'application/json' };
+
+	return fetch(requestUrl, { headers }).then((res) => {
 		if (res.ok) {
 			return res.json();
 		}
