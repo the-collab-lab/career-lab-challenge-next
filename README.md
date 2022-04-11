@@ -1,6 +1,6 @@
 # 🗒️ Let’s look at some art
 
-Your team has been developing an app that allows users to search the Art Institute of Chicago (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with one of the APIs. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with the COIA's APIs.
+Your team has been developing an app that allows users to search the Art Institute of Chicago (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with one of the APIs. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with the AIC's APIs.
 
 ## Local development setup
 
@@ -40,7 +40,7 @@ Now, to develop the app locally, run `npm start`. To run your tests, run `npm te
 Your team has agreed on the following requirements for the app's MVP (minimum viable product). Your teammate has implemented a couple of these criteria already. Start with `./src/components/App.jsx` to familiarize yourself with their work, then build on top of it. You're gonna do great!
 
 - [x] Create a `searchArtworks` function for making GET requests to `/search/artworks/`. See `src/utils/api.js`
-  - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the COIA `/artworks/search/` endpoint
+  - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the AIC `/artworks/search/` endpoint
   - [ ] **When the UI is minimally complete**, ensure that `searchArtworks` makes requests to the AIC `/artworks/search/` endpoint, as described in "Working with the API"
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
 - [ ] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
@@ -62,7 +62,7 @@ AIC maintains two distinct APIs: one for requesting data from its catalog, and o
 
 ### Requesting data from the catalog
 
-You’ll make requests to the `/artworks/search/` endpoint provided by the COIA. You can build a search with a URL like the following:
+You’ll make requests to the `/artworks/search/` endpoint provided by the AIC. You can build a search with a URL like the following:
 
 > `https://api.artic.edu/api/v1/artworks/search?q={USER_QUERY}&query[term][is_public_domain]=true&fields=artist_title,date_display,id,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
 
@@ -85,7 +85,7 @@ Requests to the `/artworks/seearch/` endpoint return **a JSON object**. This obj
 
 ### 🖼️ Requesting an image
 
-The COIA provides an endpoint dedicated to serving images. You can make requests from it as follows:
+The AIC provides an endpoint dedicated to serving images. You can make requests from it as follows:
 
 ```
 https://www.artic.edu/iiif/2/{IMAGE_ID}/full/843,/0/default.jpg
