@@ -33,7 +33,7 @@ export function searchArtworks(query) {
 	 * TODO: replace with path to `/artworks/search/` endpoint,
 	 * as described in README.md.
 	 */
-	const requestUrl = `${process.env.PUBLIC_URL}/ARTWORKS_SEARCH_RESULT.json`;
+	const requestUrl = `./public/ARTWORKS_SEARCH_RESULT.json`;
 
 	return fetch(requestUrl).then((res) => {
 		if (res.ok) {
