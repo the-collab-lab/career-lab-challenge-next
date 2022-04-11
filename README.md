@@ -1,6 +1,6 @@
 # 🗒️ Let’s look at some art
 
-Your team has been developing an app that allows users to search the Art Institute of Chicago (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with one of the APIs. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with the AIC's APIs.
+Your team has been developing an app that allows users to search the [Art Institute of Chicago](https://www.artic.edu/) (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with a search API. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with Art Institute of Chicago's APIs.
 
 ## Local development setup
 
@@ -47,22 +47,22 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
 - [ ] In the `App` component, render
   - the `SearchForm` component and
   - a list of results including _the name of the piece_ and _the artist who created the piece_.
-- [ ] Render a new view when a user chooses a result. It could be called `ImageDetailsPage`.
+- [ ] Render a new view when a user clicks a result. It could be called `ImageDetailsPage`.
 - [ ] In the `ImageDetailsPage` component, render
   - a back button that allows the user to return to their search, and
-  - the artwork whose title they just clicked on 💡
+  - the artwork whose title the user just clicked on 💡
 
 💡 You might think to install React Router to handle the back button functionality. That's probably something you would do in a production application, but your team has agreed that React Router is _out of scope_ for this MVP. Instead, you can use [conditional rendering](https://beta.reactjs.org/learn/conditional-rendering) to show and hide content!
 
 ## 💻 Working with the API
 
-AIC maintains two distinct APIs: one for requesting data from its catalog, and one for requesting the images from the catalog. These APIs have some dense documentation; we’ve outlined the things you should know.
+AIC maintains one API endpoint for requesting data from its catalog, and another API endpoint for requesting the images from the catalog. These APIs have [some dense documentation](https://www.artic.edu/open-access/public-api); we’ve outlined the things you should know.
 
 **⚠️ Read this section carefully.** You will need data from the catalog in order to request the images you want to show to the user!
 
 ### Requesting data from the catalog
 
-You’ll make requests to the `/artworks/search/` endpoint provided by the AIC. You can build a search with a URL like the following:
+You’ll make requests to the `/artworks/search/` endpoint provided by AIC. You can build a request with a URL like the following:
 
 > `https://api.artic.edu/api/v1/artworks/search?q={USER_QUERY}&query[term][is_public_domain]=true&fields=artist_title,date_display,id,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
 
@@ -85,7 +85,7 @@ Requests to the `/artworks/seearch/` endpoint return **a JSON object**. This obj
 
 ### 🖼️ Requesting an image
 
-The AIC provides an endpoint dedicated to serving images. You can make requests from it as follows:
+AIC provides an endpoint dedicated to serving images. These image URLs are structured as follows:
 
 ```
 https://www.artic.edu/iiif/2/{IMAGE_ID}/full/843,/0/default.jpg
@@ -97,4 +97,4 @@ You should replace `{IMAGE_ID}` with an image ID from the data you retrieve from
 https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg
 ```
 
-You can also [open that image in your browser](https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg), if you’d like!
+You can also [open _La grande jette_ in your browser](https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg), if you’d like!
