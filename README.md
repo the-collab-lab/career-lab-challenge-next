@@ -43,16 +43,16 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
   - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the AIC `/artworks/search/` endpoint
   - [ ] **When the UI is minimally complete**, ensure that `searchArtworks` makes requests to the AIC `/artworks/search/` endpoint, as described in "Working with the API"
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
-- [ ] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
-- [ ] In the `App` component render
+  - [ ] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
+- [ ] In the `App` component, render
   - the `SearchForm` component and
   - a list of results including _the name of the piece_ and _the artist who created the piece_.
 - [ ] Render a new view when a user chooses a result. It could be called `ImageDetailsPage`.
 - [ ] In the `ImageDetailsPage` component, render
-  - a back button💡 that allows the user to return to their search, and
-  - the artwork whose title they just clicked on
+  - a back button that allows the user to return to their search, and
+  - the artwork whose title they just clicked on 💡
 
-💡 Render **your own back button** that allows the user to return to their search results. Don't worry about supporting the browser's backward and forward navigation buttons in your MVP.
+💡 You might think to install React Router to handle the back button functionality. That's probably something you would do in a production application, but your team has agreed that React Router is _out of scope_ for this MVP. Instead, you can use [conditional rendering](https://beta.reactjs.org/learn/conditional-rendering) to show and hide content!
 
 ## 💻 Working with the API
 
