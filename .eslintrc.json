@@ -6,6 +6,7 @@
 		"react-app/jest"
 	],
 	"rules": {
+    "react/jsx-filename-extension": "error",
 		"react/jsx-sort-props": [
 			1,
 			{
