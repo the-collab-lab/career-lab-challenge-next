@@ -1,5 +1,10 @@
 {
-	"extends": ["react-app", "react-app/jest", "prettier"],
+	"extends": [
+		"plugin:jsx-a11y/recommended",
+		"prettier",
+		"react-app",
+		"react-app/jest"
+	],
 	"rules": {
 		"react/jsx-sort-props": [
 			1,
