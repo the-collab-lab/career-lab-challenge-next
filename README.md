@@ -28,7 +28,7 @@ In your terminal, `cd` into the folder you want your project to live in and run 
 ```
 # Generate a new repo from this template with the name `take-home-assignment`
 # and clone it to your computer in a new folder named `take-home-assignment`
-gh repo create take-home-assignment --template mxmason/career-lab-assignment-next --public --clone
+gh repo create take-home-assignment --template the-collab-lab/career-lab-assignment-next --public --clone
 # Move into this new folder and install the project's dependencies
 cd take-home-assignment && npm ci
 ```
@@ -40,8 +40,8 @@ Now, to develop the app locally, run `npm start`. To run your tests, run `npm te
 Your team has agreed on the following requirements for the app's MVP (minimum viable product). Your teammate has implemented a couple of these criteria already. Start with `./src/components/App.jsx` to familiarize yourself with their work, then build on top of it. You're gonna do great!
 
 - [x] Create a `searchArtworks` function for making GET requests to `/search/artworks/`. See `src/utils/api.js`
-  - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the AIC `/artworks/search/` endpoint
-  - [ ] **When the UI is minimally complete**, ensure that `searchArtworks` makes requests to the AIC `/artworks/search/` endpoint, as described in "Working with the API"
+  - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the AIC `/artworks/search/` endpoint while the app is in development
+  - [ ] **When the UI is complete**, ensure that `searchArtworks` makes requests to the AIC `/artworks/search/` endpoint, as described in "Working with the API"
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
   - [ ] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
 - [ ] In the `App` component, render
@@ -49,8 +49,8 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
   - a list of results including _the name of the piece_ and _the artist who created the piece_.
 - [ ] Render a new view when a user clicks a result. It could be called `ImageDetailsPage`.
 - [ ] In the `ImageDetailsPage` component, render
-  - a back button that allows the user to return to their search, and
-  - the artwork whose title the user just clicked on 💡
+  - a back button that allows the user to return to their search💡, and
+  - the artwork whose title the user just clicked on
 
 💡 You might think to install React Router to handle the back button functionality. That's probably something you would do in a production application, but your team has agreed that React Router is _out of scope_ for this MVP. Instead, you can use [conditional rendering](https://beta.reactjs.org/learn/conditional-rendering) to show and hide content!
 
@@ -91,7 +91,7 @@ AIC provides an endpoint dedicated to serving images. These image URLs are struc
 https://www.artic.edu/iiif/2/{IMAGE_ID}/full/843,/0/default.jpg
 ```
 
-You should replace `{IMAGE_ID}` with an image ID from the data you retrieve from the `/artworks/search/` endpoint. For instance, you can view Georges Seurat’s _La grande jette_ at the following URL:
+You should replace `{IMAGE_ID}` with an image ID from the data you retrieve from the `/artworks/search/` endpoint. The resulting URL allows you to show the image to users. For instance, you can view Georges Seurat’s _La grande jette_ at the following URL:
 
 ```
 https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg
