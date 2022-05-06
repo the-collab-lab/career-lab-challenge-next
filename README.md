@@ -97,10 +97,12 @@ AIC provides an endpoint dedicated to serving images. These image URLs are struc
 https://www.artic.edu/iiif/2/{IMAGE_ID}/full/843,/0/default.jpg
 ```
 
-You should replace `{IMAGE_ID}` with an image ID from the data you retrieve from the `/artworks/search/` endpoint. The resulting URL allows you to show the image to users. For instance, you can view Georges Seurat’s _La grande jette_ at the following URL:
+You should replace `{IMAGE_ID}` with an image ID from the data you retrieve from the `/artworks/search/` endpoint. You can use the resulting URL in an `img` element to show that artwork to your users. For instance, the following `img` element would render Georges Seurat's _La grande jette_ in the browser:
 
-```
-https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg
+```html
+<img
+	src="https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg"
+/>
 ```
 
 You can also [open _La grande jette_ in your browser](https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg), if you’d like!
