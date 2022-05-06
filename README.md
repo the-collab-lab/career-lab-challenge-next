@@ -2,6 +2,8 @@
 
 Your team has been developing an app that allows users to search the [Art Institute of Chicago](https://www.artic.edu/) (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with a search API. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with Art Institute of Chicago's APIs.
 
+❗ **Please limit your time spent on this project to _one hour_.** The goal of this project is to give you something to discuss with your interviewer at the next stage, whether the project is feature-complete or not. If you do not finish all the acceptance criteria listed here, that's okay! You can chat with your interviewer about what you would do with more time.
+
 ## Local development setup
 
 To get started, you'll need to initialize a new repo using this repo as a template. You can do that [with the Github GUI](#initialize-your-repo-from-this-template-with-the-github-gui) or [with the GitHub CLI](#initialize-your-repo-from-this-template-with-the-github-cli). After that, proceed to the [acceptance criteria](#acceptance-criteria) section.
