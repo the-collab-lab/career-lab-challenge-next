@@ -2,15 +2,18 @@
 
 Your team has been developing an app that allows users to search the [Art Institute of Chicago](https://www.artic.edu/) (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with a search API. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with Art Institute of Chicago's APIs.
 
-❗ **Please limit your time spent on this project to _one hour_.** The goal of this project is to give you something to discuss with your interviewer at the next stage, whether the project is feature-complete or not. If you do not finish all the acceptance criteria listed here, that's okay! You can chat with your interviewer about what you would do with more time.
+❗ **Please limit your time spent on this project to _one hour_.** If you do not finish all the acceptance criteria listed here, that's okay! Our goal is to give you something to discuss with your interviewer at the next stage, whether the project is feature-complete or not. You can chat with your interviewer about what you would do with more time.
 
 ## Local development setup
 
-To get started, you'll need to initialize a new repo using this repo as a template. You can do that [with the Github GUI](#initialize-your-repo-from-this-template-with-the-github-gui) or [with the GitHub CLI](#initialize-your-repo-from-this-template-with-the-github-cli). After that, proceed to the [acceptance criteria](#acceptance-criteria) section.
+To get started, you'll need to initialize a new Git repository using this repository as a template. You can do that one of two ways:
+
+- [with the Github GUI](#initialize-your-repo-from-this-template-with-the-github-gui), or
+- [with the GitHub CLI](#initialize-your-repo-from-this-template-with-the-github-cli).
+
+After that, proceed to the [acceptance criteria](#acceptance-criteria) section.
 
 ### Initialize your repo from this template with the GitHub GUI
-
-[TODO: add screenshots]
 
 1. Click the "Use this template" button on the GitHub page for this repo. It's located above this readme, and above the preview of the project's file structure.
 2. On the next page, give your new repo a name. Make sure the repository is public!
@@ -21,7 +24,7 @@ To get started, you'll need to initialize a new repo using this repo as a templa
 6. `cd` into your new directory
 7. Run `npm ci` to install the project's dependencies
 
-Now, to develop the app locally, run `npm start`. To run your tests, run `npm test`.
+Now, to develop the app locally, run `npm start`. A new window will open in your browser. Happy coding!
 
 ### Initialize your repo from this template with the GitHub CLI
 
@@ -35,7 +38,7 @@ gh repo create take-home-assignment --template the-collab-lab/career-lab-assignm
 cd take-home-assignment && npm ci
 ```
 
-Now, to develop the app locally, run `npm start`. To run your tests, run `npm test`.
+Now, to develop the app locally, run `npm start`. A new window will open in your browser. Happy coding!
 
 ## Acceptance criteria
 
@@ -47,12 +50,12 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
   - [ ] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
 - [ ] In the `App` component, render
-  - the `SearchForm` component and
-  - a list of results including _the name of the piece_ and _the artist who created the piece_.
+  - [x] the `SearchForm` component and
+  - [ ] a list of results including _the name of the piece_ and _the artist who created the piece_.
 - [ ] Render a new view when a user clicks a result. It could be called `ImageDetailsPage`.
 - [ ] In the `ImageDetailsPage` component, render
-  - a back button that, when clicked, returns the user to the list view💡, and
-  - the artwork whose title the user just clicked on
+  - [ ] a back button that, when clicked, returns the user to the list view💡, and
+  - [ ] the artwork whose title the user just clicked on
 
 💡 You might think to install React Router to handle the back button functionality. That's probably something you would do in a production application, but your team has agreed that React Router is _out of scope_ for this MVP. Instead, you can use [conditional rendering](https://beta.reactjs.org/learn/conditional-rendering) to show and hide content!
 
