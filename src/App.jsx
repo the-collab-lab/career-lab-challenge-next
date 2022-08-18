@@ -1,8 +1,7 @@
 import './App.css';
 
-import { searchArtworks } from '../utils/api';
-import { SearchForm } from './SearchForm';
-import { Footer } from './Footer';
+import { searchArtworks } from './utils/api';
+import { Footer, SearchForm } from './components';
 
 export function App() {
 	function onSearchSubmit(query) {

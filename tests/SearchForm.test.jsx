@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { SearchForm } from '../src/components/SearchForm';
+import { SearchForm } from '../src/components';
 
 test('Renders an input with the expected label', () => {
 	render(<SearchForm />);
