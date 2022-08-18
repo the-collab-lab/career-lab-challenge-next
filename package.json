@@ -2,6 +2,10 @@
   "name": "career-lab-challenge-next",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": "^16.15.0",
+    "npm": "^8.11.0"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
