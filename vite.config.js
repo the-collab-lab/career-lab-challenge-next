@@ -43,6 +43,9 @@ export default defineConfig({
 		splitVendorChunkPlugin(),
 		VitePWA(PWAConfig),
 	],
+	server: {
+		port: 3000,
+	},
 	test: {
 		globals: true,
 		environment: 'jsdom',
