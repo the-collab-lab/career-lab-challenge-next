@@ -1,8 +1,8 @@
 # 🗒️ Let’s look at some art
 
-Your team has been developing an app that allows users to search the [Art Institute of Chicago](https://www.artic.edu/) (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with a search API. Your job is to finish the rest of the tasks your team has agreed on! We've listed those acceptance criteria in this document, as well as some tips for working with Art Institute of Chicago's APIs.
+Your team has been developing an app that allows users to search the [Art Institute of Chicago](https://www.artic.edu/) (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with a search API. Your job is to finish the rest of the acceptance criteria your team has agreed on! We've listed those acceptance criteria in this document, and provided some mockups of the app, as well as some tips for working with Art Institute of Chicago's APIs. You're gonna do great!
 
-❗ **Please limit your time spent on this project to _one hour_.** If you do not finish all the acceptance criteria listed here, that's okay! Our goal is to give you something to discuss with your interviewer at the next stage, whether the project is feature-complete or not. You can chat with your interviewer about what you would do with more time.
+❗ **Please limit your time spent on this project to _one hour_.** If you don't finish all the acceptance criteria, that's okay! Our goal is to give you something to discuss with your interviewer at the next stage, whether the project is feature-complete or not. You can chat with your interviewer about what you would do with more time.
 
 ## Local development setup
 
@@ -40,9 +40,9 @@ cd take-home-assignment && npm ci
 
 Now, to develop the app locally, run `npm start`. A new window will open in your browser. Happy coding!
 
-## Acceptance criteria
+## ✅ Acceptance criteria
 
-Your team has agreed on the following requirements for the app's MVP (minimum viable product). Your teammate has implemented a couple of these criteria already. Start with `./src/components/App.jsx` to familiarize yourself with their work, then build on top of it. You're gonna do great!
+Your team has agreed on the following requirements for the app's MVP (minimum viable product). A teammate has implemented some of these criteria already, and it's your job to finish the rest. Start with `./src/components/App.jsx` to familiarize yourself with your teammate's work, then build on top of it.
 
 - [x] Create a `searchArtworks` function for making GET requests to `/search/artworks/`. See `src/utils/api.js`
   - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the AIC `/artworks/search/` endpoint while the app is in development
@@ -52,18 +52,25 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
 - [ ] In the `App` component, render
   - [x] the `SearchForm` component and
   - [ ] a list of results including _the name of the piece_ and _the artist who created the piece_.
-- [ ] Render a new view when a user clicks a result. It could be called `ImageDetailsPage`.
+- [ ] Create an `ImageDetailsPage` component.
+- [ ] Render `ImageDetailsPage` when the user clicks the title of a piece in the list of results. 💡
 - [ ] In the `ImageDetailsPage` component, render
-  - [ ] a back button that, when clicked, returns the user to the list view💡, and
-  - [ ] the artwork whose title the user just clicked on
+  - [ ] the name of the piece
+  - [ ] the artist who created the piece
+  - [ ] the image associated with the piece (don't forget its alt text!)
+  - [ ] a back button that returns the user to the list of results
 
-💡 You might think to install React Router to handle the back button functionality. That's probably something you would do in a production application, but your team has agreed that React Router is _out of scope_ for this MVP. Instead, you can use [conditional rendering](https://beta.reactjs.org/learn/conditional-rendering) to show and hide content!
+### 💡 On rendering `ImageDetailsPage`
 
-Here's some logic you could use to approach the conditional rendering criterion:
+You might think to install React Router to handle the back button functionality. That's probably something you would do in a production application, but your team has agreed that React Router is _out of scope_ for this MVP. Instead, you can use [conditional rendering](https://react.dev/learn/conditional-rendering) to show and hide content. Here's some logic you could use to approach conditional rendering:
 
-- If no artwork is selected, render the list with the search form
+- If no artwork is selected, render the the search form with the list of results
 - If an artwork is selected, instead render the `ImageDetailsPage` component
-- If the back button on `ImageDetailsPage` is clicked, render the list with the search form
+- If the back button on `ImageDetailsPage` is clicked, render the search form with the list of results
+
+## 🎨 Mockups
+
+Your designer created some mockups so that everyone has a shared understanding of what the application should look like. You can find them in [the `mockups` directory](./mockups). Remember: these are just mockups! You can use them as a guide, but you don't need to match them exactly.
 
 ## 💻 Working with the API
 
@@ -87,12 +94,58 @@ Try it our for yourself: [open the “cats” query in your browser](https://api
 
 Requests to the `/artworks/seearch/` endpoint return **a JSON object**. This object has _a lot_ of information. You should focus on the `data` property, which is an array of objects. Each object is shaped as follows:
 
-- `artist_title`: a string indicating the known artist of the piece
-- `date_display`: a string indicating the known production date of the piece
-- `id`: a number representing the item’s unique id
-- `image_id`: a string referencing the id of the full image for this catalog item
-- `thumbnail`: an object with the following properties: `alt_text`, `width`, and `height`
-- `title`: a string indicating the title of the piece
+<table>
+	<tr>
+		<th>Property name</th>
+		<th>Data type</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><code>artist_title</code></td>
+		<td>string</td>
+		<td>The known artist of the piece</td>
+	</tr>
+	<tr>
+		<td><code>date_display</code></td>
+		<td>string</td>
+		<td>The known production date of the piece</td>
+	</tr>
+	<tr>
+		<td><code>id</code></td>
+		<td>number</td>
+		<td>The item’s unique id</td>
+	</tr>
+	<tr>
+		<td><code>image_id</code></td>
+		<td>string</td>
+		<td>The id of the full image for this catalog item</td>
+	</tr>
+	<tr>
+		<td><code>thumbnail</code></td>
+		<td>object</td>
+		<td>An object with the properties <code>alt_text</code>, <code>width</code>, and <code>height</code></td>
+	</tr>
+	<tr>
+		<td><code>thumbnail.alt_text</code></td>
+		<td>string</td>
+		<td>The alt text for the thumbnail image</td>
+	</tr>
+	<tr>
+		<td><code>thumbnail.height</code></td>
+		<td>number</td>
+		<td>The height of the thumbnail image</td>
+	</tr>
+	<tr>
+		<td><code>thumbnail.width</code></td>
+		<td>number</td>
+		<td>The width of the thumbnail image</td>
+	</tr>
+	<tr>
+		<td><code>title</code></td>
+		<td>string</td>
+		<td>The title of the piece</td>
+	</tr>
+</table>
 
 ### 🖼️ Requesting an image
 
