@@ -44,7 +44,7 @@ Now, to develop the app locally, run `npm start`. A new window will open in your
 
 Your team has agreed on the following requirements for the app's MVP (minimum viable product). A teammate has implemented some of these criteria already, and it's your job to finish the rest. Start with `./src/components/App.jsx` to familiarize yourself with your teammate's work, then build on top of it.
 
-- [x] Create a `searchArtworks` function for making GET requests to `/search/artworks/`. See `src/utils/api.js`
+- [x] Create a `searchArtworks` function for making GET requests to `/search/artworks/`. See `src/api.js`
   - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the AIC `/artworks/search/` endpoint while the app is in development
   - [ ] **When the UI is complete**, ensure that `searchArtworks` makes requests to the AIC `/artworks/search/` endpoint, as described in "Working with the API"
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`

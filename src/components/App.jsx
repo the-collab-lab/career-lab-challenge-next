@@ -1,6 +1,6 @@
 import './App.css';
 
-import { searchArtworks } from '../utils/api';
+import { searchArtworks } from '../api';
 import { SearchForm } from './SearchForm';
 import { Footer } from './Footer';
 
@@ -11,7 +11,7 @@ export function App() {
 		// NOTE: `searchArtworks` currently returns local data, so that we
 		// don't make too many requests to the API! Once we've built out
 		// our UI, we need to make real requests!
-		// @see: ./src/uitls/api.js
+		// @see: ./src/api.js
 		searchArtworks(query).then((json) => {
 			console.log(json);
 		});
