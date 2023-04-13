@@ -87,12 +87,58 @@ Try it our for yourself: [open the “cats” query in your browser](https://api
 
 Requests to the `/artworks/seearch/` endpoint return **a JSON object**. This object has _a lot_ of information. You should focus on the `data` property, which is an array of objects. Each object is shaped as follows:
 
-- `artist_title`: a string indicating the known artist of the piece
-- `date_display`: a string indicating the known production date of the piece
-- `id`: a number representing the item’s unique id
-- `image_id`: a string referencing the id of the full image for this catalog item
-- `thumbnail`: an object with the following properties: `alt_text`, `width`, and `height`
-- `title`: a string indicating the title of the piece
+<table>
+	<tr>
+		<th>Property name</th>
+		<th>Data type</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><code>artist_title</code></td>
+		<td>string</td>
+		<td>The known artist of the piece</td>
+	</tr>
+	<tr>
+		<td><code>date_display</code></td>
+		<td>string</td>
+		<td>The known production date of the piece</td>
+	</tr>
+	<tr>
+		<td><code>id</code></td>
+		<td>number</td>
+		<td>The item’s unique id</td>
+	</tr>
+	<tr>
+		<td><code>image_id</code></td>
+		<td>string</td>
+		<td>The id of the full image for this catalog item</td>
+	</tr>
+	<tr>
+		<td><code>thumbnail</code></td>
+		<td>object</td>
+		<td>An object with the properties <code>alt_text</code>, <code>width</code>, and <code>height</code></td>
+	</tr>
+	<tr>
+		<td><code>thumbnail.alt_text</code></td>
+		<td>string</td>
+		<td>The alt text for the thumbnail image</td>
+	</tr>
+	<tr>
+		<td><code>thumbnail.height</code></td>
+		<td>number</td>
+		<td>The height of the thumbnail image</td>
+	</tr>
+	<tr>
+		<td><code>thumbnail.width</code></td>
+		<td>number</td>
+		<td>The width of the thumbnail image</td>
+	</tr>
+	<tr>
+		<td><code>title</code></td>
+		<td>string</td>
+		<td>The title of the piece</td>
+	</tr>
+</table>
 
 ### 🖼️ Requesting an image
 
