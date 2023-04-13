@@ -65,6 +65,12 @@ Here's some logic you could use to approach the conditional rendering criterion:
 - If an artwork is selected, instead render the `ImageDetailsPage` component
 - If the back button on `ImageDetailsPage` is clicked, render the list with the search form
 
+## Mockups
+
+Your designer has provided some mockups so that you and the other engineers have a shared understanding of what the application should look like. You can find them in [the `mockups` directory](./mockups).
+
+Remember: these are just mockups! You can use them as a guide, but you don't need to match them exactly.
+
 ## 💻 Working with the API
 
 AIC maintains one API endpoint for requesting data from its catalog, and another API endpoint for requesting the images from the catalog. These APIs have [some dense documentation](https://www.artic.edu/open-access/public-api); we’ve outlined the things you should know.
