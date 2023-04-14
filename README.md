@@ -82,13 +82,13 @@ AIC maintains one API endpoint for requesting data from its catalog, and another
 
 You’ll make requests to the `/artworks/search/` endpoint provided by AIC. You can build a request with a URL like the following:
 
-> `https://api.artic.edu/api/v1/artworks/search?q={USER_QUERY}&query[term][is_public_domain]=true&fields=artist_title,date_display,id,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
+> `https://api.artic.edu/api/v1/artworks/search?q={USER_QUERY}&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
 
 These URLs are quite long, but you don't need to worry about exactly what each part means. You'll need to replace `{USER_QUERY}` with the thing your user searched for in the catalog. If your user searches for “cats”, your request url becomes:
 
-> `https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,id,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`.
+> `https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`.
 
-Try it our for yourself: [open the “cats” query in your browser](https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,id,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title).
+Try it our for yourself: [open the “cats” query in your browser](https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title).
 
 #### Working with data returned from the catalog
 
@@ -109,11 +109,6 @@ Requests to the `/artworks/seearch/` endpoint return **a JSON object**. This obj
 		<td><code>date_display</code></td>
 		<td>string</td>
 		<td>The known production date of the piece</td>
-	</tr>
-	<tr>
-		<td><code>id</code></td>
-		<td>number</td>
-		<td>The item’s unique id</td>
 	</tr>
 	<tr>
 		<td><code>image_id</code></td>
