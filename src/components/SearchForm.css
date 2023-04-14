@@ -1,7 +1,14 @@
 .Form {
+	--color-border: #000;
 	display: flex;
 	font-size: 1.2em;
 	flex-direction: column;
+}
+
+@media (prefers-color-scheme: dark) {
+	.Form {
+		--color-border: hsl(0 0% 83% / 1);
+	}
 }
 
 .Form .button,
@@ -14,6 +21,6 @@
 }
 
 .Form .input {
-	border: 1px solid black;
+	border: 1px solid var(--color-border);
 	border-radius: 0;
 }
