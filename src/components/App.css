@@ -4,13 +4,9 @@
 	height: 100vh;
 	margin: 0 auto;
 	max-width: 95%;
-	width: 100rem;
+	width: 72ch;
 }
 
 .App > h1 {
 	text-align: center;
-}
-
-.App > .Footer {
-	margin-top: auto;
 }

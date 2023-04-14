@@ -15,10 +15,8 @@ export function SearchForm({ onSearchSubmit }) {
 
 	return (
 		<form className="Form" role="search" onSubmit={handleFormSubmit}>
-			<label className="label" htmlFor="search-field">
-				Search for some art
-			</label>
 			<input
+				aria-label="Search for artworks"
 				className="input"
 				id="search-field"
 				inputMode="search"
