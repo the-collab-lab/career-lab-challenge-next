@@ -8,23 +8,30 @@
 /**
  * An individual piece of artwork found at the `/artworks/search/` endpoint.
  * @typedef {Object} Artwork
- * @property {string} artist_title
+ * @property {number} _score
+ * @property {string | null} artist_title
  * @property {string} date_display
  * @property {string} image_id
  * @property {{alt_text: string, height: number, width: number}} thumbnail
  * @property {string} title
- * @property {number} _score
- *
- *
- * @typedef {Object} ArtworkSearchResult
+ */
+
+/**
+ * The response from the `/artworks/search/` endpoint. Includes an array of
+ * artworks, as well as some `config`, `info`, and `pagination` metadata.
+ * @typedef {Object} AICSearchResponse
+ * @property {Object} config
  * @property {Array<Artwork>} data
+ * @property {Object} info
+ * @property {Object} pagination
+ * @property {null} preference
  */
 
 /**
  * Search the Chicago Institute of Art's `/artworks/search/` endpoint
  * and get a Promise containing the JSON-encoded response.
  * @param {string} query
- * @returns {Promise<ArtworkSearchResult>}
+ * @returns {Promise<AICSearchResponse>}
  */
 export function searchArtworks(query) {
 	/**
