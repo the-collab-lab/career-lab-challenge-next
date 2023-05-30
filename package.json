@@ -28,6 +28,10 @@
     "vite-plugin-pwa": "^0.15.2",
     "vitest": "^0.31.2"
   },
+  "overrides": {
+    "rollup-plugin-terser": "@rollup/plugin-terser@^0.4.3",
+    "sourcemap-codec": "@jridgewell/sourcemap-codec@^1.4.15"
+  },
   "scripts": {
     "start": "vite",
     "build": "vite build",
