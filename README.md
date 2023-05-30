@@ -86,13 +86,13 @@ You’ll make requests to the `/artworks/search/` endpoint provided by AIC. You 
 
 These URLs are quite long, but you don't need to worry about exactly what each part means. You'll need to replace `{USER_QUERY}` with the thing your user searched for in the catalog. If your user searches for “cats”, your request url becomes:
 
-> `https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`.
+> `https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.height,thumbnail.width,title`.
 
-Try it our for yourself: [open the “cats” query in your browser](https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title).
+Try it our for yourself: [open the “cats” query in your browser](https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.height,thumbnail.width,title).
 
 #### Working with data returned from the catalog
 
-Requests to the `/artworks/seearch/` endpoint return **a JSON object**. This object has _a lot_ of information. You should focus on the `data` property, which is an array of objects. Each object is shaped as follows:
+Requests to the `/artworks/seearch/` endpoint return **a JSON object**. This object has _a lot_ of information. You should focus on the `data` property, which is an array of objects. While you may not need _all_ of the information in each object, you'll probably need most of it! Each object is shaped as follows:
 
 <table>
 	<tr>
@@ -101,43 +101,48 @@ Requests to the `/artworks/seearch/` endpoint return **a JSON object**. This obj
 		<th>Description</th>
 	</tr>
 	<tr>
+		<td><code>_score</code></td>
+		<td><code>number</code></td>
+		<td>The API's confidence that this result is something you're looking for</td>
+	</tr>
+	<tr>
 		<td><code>artist_title</code></td>
-		<td>string</td>
-		<td>The known artist of the piece</td>
+		<td><code>string | null</code></td>
+		<td>The known artist of the piece (may be <code>null</code>)</td>
 	</tr>
 	<tr>
 		<td><code>date_display</code></td>
-		<td>string</td>
+		<td><code>string</code></td>
 		<td>The known production date of the piece</td>
 	</tr>
 	<tr>
 		<td><code>image_id</code></td>
-		<td>string</td>
+		<td><code>string</code></td>
 		<td>The id of the full image for this catalog item</td>
 	</tr>
 	<tr>
 		<td><code>thumbnail</code></td>
-		<td>object</td>
-		<td>An object with the properties <code>alt_text</code>, <code>width</code>, and <code>height</code></td>
+		<td><code>object</code></td>
+		<td>An object with the properties <code>alt_text</code>, <code>height</code>, and <code>width</code></td>
 	</tr>
 	<tr>
 		<td><code>thumbnail.alt_text</code></td>
-		<td>string</td>
-		<td>The alt text for the thumbnail image</td>
+		<td><code>string</code></td>
+		<td>The description of the thumbnail image</td>
 	</tr>
 	<tr>
 		<td><code>thumbnail.height</code></td>
-		<td>number</td>
+		<td><code>number</code></td>
 		<td>The height of the thumbnail image</td>
 	</tr>
 	<tr>
 		<td><code>thumbnail.width</code></td>
-		<td>number</td>
+		<td><code>number</code></td>
 		<td>The width of the thumbnail image</td>
 	</tr>
 	<tr>
 		<td><code>title</code></td>
-		<td>string</td>
+		<td><code>string</code></td>
 		<td>The title of the piece</td>
 	</tr>
 </table>
