@@ -45,8 +45,8 @@ Now, to develop the app locally, run `npm start`. A new window will open in your
 Your team has agreed on the following requirements for the app's MVP (minimum viable product). A teammate has implemented some of these criteria already, and it's your job to finish the rest. Start with `./src/components/App.jsx` to familiarize yourself with your teammate's work, then build on top of it.
 
 - [x] Create a `searchArtworks` function for making GET requests to `/search/artworks/`. See `src/api.js`
-  - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the AIC `/artworks/search/` endpoint while the app is in development
-  - [ ] **When the UI is complete**, ensure that `searchArtworks` makes requests to the AIC `/artworks/search/` endpoint, as described in "Using the `/artworks/search/` endpoint"
+  - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the AIC's search endpoint while the app is in development
+  - [ ] **When the UI is complete**, ensure that `searchArtworks` makes requests to the AIC's `/artworks/search/` endpoint, as described in "Using the `/artworks/search/` endpoint"
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
   - [ ] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
 - [ ] In the `App` component, render
@@ -74,7 +74,7 @@ Your designer created some mockups so that everyone has a shared understanding o
 
 ## 💻 Working with the AIC's data
 
-AIC maintains one API endpoint for searching for artwork data, and another API endpoint for requesting the images from the catalog. These APIs have [some dense documentation](https://www.artic.edu/open-access/public-api); we’ve outlined the things you should know, starting with the shape o fthe data you'll be working with.
+AIC maintains one API endpoint for searching for artwork data, and another API endpoint for requesting the images from the catalog. AIC's [API documentation](https://www.artic.edu/open-access/public-api) is dense; we’ve outlined the things you should know, starting with the shape of the data you'll be working with.
 
 **⚠️ Read this section carefully.** You will need artwork data in order to request the actual images you want to show to the user!
 
