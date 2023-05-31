@@ -1,8 +1,8 @@
 # 🗒️ Let’s look at some art
 
-Your team has been developing an app that allows users to search the [Art Institute of Chicago](https://www.artic.edu/) (AIC)'s APIs for public domain artwork. You've inherited some code from a teammate – a React application with some components and some functions for interating with a search API. Your job is to finish the rest of the acceptance criteria your team has agreed on! We've listed those acceptance criteria in this document, and provided some mockups of the app, as well as some tips for working with Art Institute of Chicago's APIs. You're gonna do great!
+Your team has been developing an app that allows users to search for public-domain artwork hosted by the [Art Institute of Chicago](https://www.artic.edu/) (AIC). You've inherited some code from a teammate – a React application with some components and some functions for interacting with a search API provided by the AIC. Your task is to finish building out the app according to the acceptance criteria your team has agreed on. We've listed those acceptance criteria in this document and provided some mockups of the app, as well as some tips for working with Art Institute of Chicago's APIs. You're gonna do great!
 
-❗ **Please limit your time spent on this project to _one hour_.** If you don't finish all the acceptance criteria, that's okay! Our goal is to give you something to discuss with your interviewer at the next stage, whether the project is feature-complete or not. You can chat with your interviewer about what you would do with more time.
+❗ **Please limit your time spent on this project to no more than _one and a half hours_.** If you don't finish all the acceptance criteria, that's okay! Our goal is to give you something to discuss with your interviewer at the next stage, whether the project is feature-complete or not. You can chat with your interviewer about what you would do with more time.
 
 ## Local development setup
 
@@ -46,7 +46,7 @@ Your team has agreed on the following requirements for the app's MVP (minimum vi
 
 - [x] Create a `searchArtworks` function for making GET requests to `/search/artworks/`. See `src/api.js`
   - [x] Request a local copy of data in `searchArtworks` to avoid making too many requests to the AIC `/artworks/search/` endpoint while the app is in development
-  - [ ] **When the UI is complete**, ensure that `searchArtworks` makes requests to the AIC `/artworks/search/` endpoint, as described in "Working with the API"
+  - [ ] **When the UI is complete**, ensure that `searchArtworks` makes requests to the AIC `/artworks/search/` endpoint, as described in "Using the `/artworks/search/` endpoint"
 - [x] Create a `SearchForm` component that will allow the user to perform a search. See `src/components/SearchForm.jsx`
   - [ ] Fix a known bug: the whole app refreshes when `SearchForm` is submitted
 - [ ] In the `App` component, render
@@ -72,27 +72,15 @@ You might think to install React Router to handle the back button functionality.
 
 Your designer created some mockups so that everyone has a shared understanding of what the application should look like. You can find them in [the `mockups` directory](./mockups). Remember: these are just mockups! You can use them as a guide, but you don't need to match them exactly.
 
-## 💻 Working with the API
+## 💻 Working with the AIC's data
 
-AIC maintains one API endpoint for requesting data from its catalog, and another API endpoint for requesting the images from the catalog. These APIs have [some dense documentation](https://www.artic.edu/open-access/public-api); we’ve outlined the things you should know.
+AIC maintains one API endpoint for searching for artwork data, and another API endpoint for requesting the images from the catalog. These APIs have [some dense documentation](https://www.artic.edu/open-access/public-api); we’ve outlined the things you should know, starting with the shape o fthe data you'll be working with.
 
-**⚠️ Read this section carefully.** You will need data from the catalog in order to request the images you want to show to the user!
+**⚠️ Read this section carefully.** You will need artwork data in order to request the actual images you want to show to the user!
 
-### Requesting data from the catalog
+### 📦 The shape of the artwork data
 
-You’ll make requests to the `/artworks/search/` endpoint provided by AIC. You can build a request with a URL like the following:
-
-> `https://api.artic.edu/api/v1/artworks/search?q={USER_QUERY}&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
-
-These URLs are quite long, but you don't need to worry about exactly what each part means. You'll need to replace `{USER_QUERY}` with the thing your user searched for in the catalog. If your user searches for “cats”, your request url becomes:
-
-> `https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.height,thumbnail.width,title`.
-
-Try it our for yourself: [open the “cats” query in your browser](https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.height,thumbnail.width,title).
-
-#### Working with data returned from the catalog
-
-Requests to the `/artworks/seearch/` endpoint return **a JSON object**. This object has _a lot_ of information. You should focus on the `data` property, which is an array of objects. While you may not need _all_ of the information in each object, you'll probably need most of it! Each object is shaped as follows:
+Requests to the `/artworks/search/` endpoint return **a JSON object**. This object has _a lot_ of information. You should focus on the `data` property, which is an array of objects. While you may not need _all_ of the information in each object, you'll probably need most of it! Each object is shaped as follows:
 
 <table>
 	<tr>
@@ -164,3 +152,15 @@ You should replace `{IMAGE_ID}` with an image ID from the data you retrieve from
 ```
 
 You can also [open _La grande jette_ in your browser](https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg), if you’d like!
+
+### Using the `/artworks/search/` endpoint
+
+Once you've completed your UI, including successfully rendering artwork images, you can make requests to the `/artworks/search/` endpoint provided by the AIC. Request URLs take on the following shape:
+
+> `https://api.artic.edu/api/v1/artworks/search?q={USER_QUERY}&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
+
+These URLs are quite long, but you don't need to worry about what each part means. Just know that you need to replace `{USER_QUERY}` with the thing your user searched for in the catalog. If your user searches for “cats”, your request url becomes:
+
+> `https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.height,thumbnail.width,title`.
+
+Try it our for yourself: [open the “cats” query in your browser](https://api.artic.edu/api/v1/artworks/search?q=cats&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail.alt_text,thumbnail.height,thumbnail.width,title).
