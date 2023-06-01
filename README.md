@@ -2,7 +2,7 @@
 
 Your team has been developing an app that allows users to search for public-domain artwork hosted by the [Art Institute of Chicago](https://www.artic.edu/) (AIC). You've inherited some code from a teammate – a React application with some components and some functions for interacting with a search API provided by the AIC. Your task is to finish building out the app according to the acceptance criteria your team has agreed on. We've listed those acceptance criteria in this document and provided some mockups of the app, as well as some tips for working with Art Institute of Chicago's APIs. You're gonna do great!
 
-❗ **Please limit your time spent on this project to no more than _one and a half hours_.** If you don't finish all the acceptance criteria, that's okay! Our goal is to give you something to discuss with your interviewer at the next stage, whether the project is feature-complete or not. You can chat with your interviewer about what you would do with more time.
+❗ **Please limit your time spent on this project to no more than _one hour_.** If you don't finish all the acceptance criteria, that's okay! Our goal is to give you something to discuss with your interviewer at the next stage, whether the project is feature-complete or not. You can chat with your interviewer about what you would do with more time.
 
 ## Local development setup
 
