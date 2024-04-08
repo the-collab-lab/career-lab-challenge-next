@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
 import { searchArtworks } from '../api';
-import { SearchForm } from './SearchForm';
+
 import { Footer } from './Footer';
+import { SearchForm } from './SearchForm';
 
 import './App.css';
 

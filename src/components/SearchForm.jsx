@@ -1,6 +1,6 @@
-import './SearchForm.css';
-
 import { useState } from 'react';
+
+import './SearchForm.css';
 
 export function SearchForm({ onSearchSubmit }) {
 	const [query, setQuery] = useState('');
