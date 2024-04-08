@@ -1,8 +1,10 @@
-import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import eslint from '@nabla/vite-plugin-eslint';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+
 import { VitePWA } from 'vite-plugin-pwa';
 
+/** @type {import('vite-plugin-pwa').VitePWAOptions} */
 const PWAConfig = {
 	includeAssets: ['favicon.ico', 'robots.txt'],
 	manifest: {
@@ -36,11 +38,28 @@ const PWAConfig = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	build: { outDir: './build', target: 'esnext' },
+	build: {
+		outDir: './build',
+		target: 'esnext',
+		rollupOptions: {
+			output: {
+				manualChunks: (id) => {
+					if (id.includes('node_modules')) {
+						if (id.includes('react')) {
+							return 'vendor__react';
+						}
+						if (id.includes('firebase')) {
+							return 'vendor__firebase';
+						}
+						return 'vendor';
+					}
+				},
+			},
+		},
+	},
 	plugins: [
-		eslint({ formatter: 'stylish' }),
+		eslint({ cache: false, formatter: 'stylish' }),
 		react(),
-		splitVendorChunkPlugin(),
 		VitePWA(PWAConfig),
 	],
 	server: {
@@ -51,5 +70,10 @@ export default defineConfig({
 		globals: true,
 		environment: 'jsdom',
 		setupFiles: './tests/setup.js',
+		server: {
+			// Prevents Vitest from crashing when it
+			// encounters a module that exports CSS.
+			deps: { inline: true },
+		},
 	},
 });
